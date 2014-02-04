@@ -5,6 +5,7 @@
 
 import urllib
 import json
+import sys
 from bs4 import BeautifulSoup
 from collections import namedtuple
 import matplotlib.pyplot as plt
@@ -54,9 +55,13 @@ def get_videos(username):
  
 if __name__ == "__main__":
     
-    # Channel Name here:
-    chname = 'HerrTutorial'
+    if len(sys.argv)==2:
+        chname = sys.argv[1]
+    else:
+        # Channel Name here:
+        chname = 'HerrTutorial'        
     
+    print('Crawling %s\'s Channel...' % chname)
     videos = get_videos(chname)
 
     value = 4.0   # € per 1000 Views
@@ -65,6 +70,12 @@ if __name__ == "__main__":
     name=[]
     money=[]
     for video in videos:
+        
+            if len(video.views)==0:
+                print('Keine Views zu dem Video')
+                continue
+            
+            print('%s: %s' % (video.title, video.views))
             name.append(video.title)
             
             views = video.views.split()[0]
@@ -72,23 +83,27 @@ if __name__ == "__main__":
             money.append(views * value/1000.0)
     
     su = np.sum(money)
-    print('%dEUR so far from YouTube' % su)
+    print('==========================================================')
+    print('%d Videos with %d Views in %s\'s Channel' % (len(name), np.sum(views), chname))
+    print('%dEUR so far from YouTube (assuming %dEUR/1.000 Views)' % (su, value))
     
     
     fig = plt.figure(figsize=(5,len(name)/2))
     pos = np.arange(len(name))+0.5
+    plt.xticks(rotation=45)
     plt.barh(pos, money, align='center',height=0.8)
     plt.axis('tight')
     plt.yticks(pos, name)
-    plt.annotate(u'ca. %dEUR' % su, xy=(0.95, 0.05),
+    plt.annotate('{0:,}EUR'.format(int(su)), xy=(0.5, 0.05),
                 xycoords='figure fraction',
-                horizontalalignment='right', verticalalignment='top',
+                horizontalalignment='center', verticalalignment='top',
                 fontsize=100,
                 color='#FF6700')
     plt.xlabel('$EURO$')
     plt.title('How much Money \'%s\' made?' % chname)
     plt.savefig('howmuch-%s-made.png' % chname, dpi=72, bbox_inches='tight', transparent=True)
     plt.close()
+    print('Done.')
 
 # <codecell>
 

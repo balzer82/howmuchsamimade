@@ -5,11 +5,11 @@ Based on the money per view, payed on YouTube, this script crawls the views of a
 
 # How?
 
-Take a look in the .py file, there you will find a variable called `chname`. Change it to the channel you wanna take a look at. Then:
+Get the channel name from http://www.youtube.com/user/xxx and fire the request with
 
-`python getit.py`
+`python getit.py xxx`
 
-will produce:
+It will produce following result.
 
 # Result
 
