@@ -69,32 +69,46 @@ if __name__ == "__main__":
     
     name=[]
     money=[]
+    durat=[]
     for video in videos:
         
             if len(video.views)==0:
                 print('Keine Views zu dem Video')
                 continue
             
-            print('%s: %s' % (video.title, video.views))
+            print('%s: %s (%smin)' % (video.title, video.views, video.duration))
             name.append(video.title)
+            
+            duration=video.duration.split(':')
+            duration=60.0*float(duration[0])+float(duration[1])
+            
+            durat.append(duration)
             
             views = video.views.split()[0]
             views = float(views.replace('.',''))
             money.append(views * value/1000.0)
     
-    su = np.sum(money)
+    smoney = np.sum(money) # in EUR
+    sviews = np.sum(views) # in Views
+    sdurat = np.sum(durat) # in Seconds
+    
     print('==========================================================')
-    print('%d Videos with %d Views in %s\'s Channel' % (len(name), np.sum(views), chname))
-    print('%dEUR so far from YouTube (assuming %dEUR/1.000 Views)' % (su, value))
+    print('%d Videos with %d Views in %s\'s Channel' % (len(name), sviews, chname))
+    print('%dEUR so far from YouTube (assuming %dEUR/1.000 Views)' % (smoney, value))
+    print('%s made %dEUR/Video, %dEUR/min Video' % (chname, smoney/len(name), smoney/(sdurat/60)))
     
-    
-    fig = plt.figure(figsize=(5,len(name)/2))
+    if (len(name)/2) > 32000:
+        figheight=32000
+    else:
+        figheight=len(name)/2
+        
+    fig = plt.figure(figsize=(5,figheight))
     pos = np.arange(len(name))+0.5
     plt.xticks(rotation=45)
     plt.barh(pos, money, align='center',height=0.8)
     plt.axis('tight')
     plt.yticks(pos, name)
-    plt.annotate('{0:,}EUR'.format(int(su)), xy=(0.5, 0.05),
+    plt.annotate('{0:,}EUR'.format(int(smoney)), xy=(0.5, 0.06),
                 xycoords='figure fraction',
                 horizontalalignment='center', verticalalignment='top',
                 fontsize=100,
