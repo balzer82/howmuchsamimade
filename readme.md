@@ -24,10 +24,9 @@ WHAT'S ON MY iPHONE 5S!? & Wie ich meine Fotos bearbeite! + OUTTAKES!: 167.772 A
 ..
 .
 ==========================================================
-318 Videos with 322901 Views in HerrTutorial's Channel
-363784$ so far from YouTube (assuming 4$/1.000 Views)
-HerrTutorial made 1143$/Video, 114$/min Video
-Done.
+318 Videos with 90949037 Views in HerrTutorial's Channel
+363796$ so far from YouTube (assuming 4$/1.000 Views)
+HerrTutorial made 1144$/Video, 114$/min Video, 0.004000$/view
 ```
 
 And you have this Bar Chart, showing all videos with earned money:

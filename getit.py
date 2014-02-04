@@ -89,6 +89,7 @@ if __name__ == "__main__":
     name=[]
     money=[]
     durat=[]
+    views=[]
     for video in videos:
         
             if len(video.views)==0:
@@ -98,14 +99,16 @@ if __name__ == "__main__":
             print('%s: %s (%smin)' % (video.title, video.views, video.duration))
             name.append(video.title)
             
-            duration=video.duration.split(':')
-            duration=60.0*float(duration[0])+float(duration[1])
+            durationtmp=video.duration.split(':')
+            duration=60.0*float(durationtmp[0])+float(durationtmp[1])
             
             durat.append(duration)
             
-            views = video.views.split()[0]
-            views = float(views.replace('.',''))
-            money.append(views * value/1000.0)
+            viewstmp = video.views.split()[0]
+            vviews = float(viewstmp.replace('.',''))
+            money.append(vviews * value/1000.0)
+            
+            views.append(vviews)
 
 # <headingcell level=2>
 
