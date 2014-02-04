@@ -87,7 +87,7 @@ if __name__ == "__main__":
                 color='#FF6700')
     plt.xlabel('$EURO$')
     plt.title('How much Money \'%s\' made?' % chname)
-    plt.savefig('howmuch-%s-made.png' % chname, dpi=72, bbox_inches='tight')
+    plt.savefig('howmuch-%s-made.png' % chname, dpi=72, bbox_inches='tight', transparent=True)
     plt.close()
 
 # <codecell>
