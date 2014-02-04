@@ -9,11 +9,15 @@ Take a look in the .py file, there you will find a variable called `chname`. Cha
 
 `python getit.py`
 
-![]()
+will produce:
+
+# Result
+
+![Bargraph](https://raw.github.com/balzer82/howmuchsamimade/master/howmuch-HerrTutorial-made.png)
 
 # Thanks to
 
-[]()
+[shaurz](https://gist.github.com/shaurz/6796103) for the YouTube Beautifulsoup
 
 # Dependencies
 
