@@ -25,8 +25,8 @@ WHAT'S ON MY iPHONE 5S!? & Wie ich meine Fotos bearbeite! + OUTTAKES!: 167.772 A
 .
 ==========================================================
 318 Videos with 322901 Views in HerrTutorial's Channel
-363784EUR so far from YouTube (assuming 4EUR/1.000 Views)
-HerrTutorial made 1143EUR/Video, 114EUR/min Video
+363784$ so far from YouTube (assuming 4$/1.000 Views)
+HerrTutorial made 1143$/Video, 114$/min Video
 Done.
 ```
 
@@ -34,7 +34,7 @@ And you have this Bar Chart, showing all videos with earned money:
 
 ![Bargraph](https://raw.github.com/balzer82/howmuchsamimade/master/howmuch-HerrTutorial-made.png)
 
-with the assumption of 4€/1000Views, mentioned in [this](http://www.googlewatchblog.de/2014/02/sinkende-werbepreise-youtube-stars/) article.
+with the assumption of 4$/1000Views, mentioned in [this](http://www.googlewatchblog.de/2014/02/sinkende-werbepreise-youtube-stars/) article.
 
 # Thanks to
 
